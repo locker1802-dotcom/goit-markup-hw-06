@@ -1,11 +1,14 @@
 .logo {
+  display: block;
+  padding: 16px 0;
   font-family: var(--second-family);
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #2e2f42;
-  line-height: 1.33;
+  line-height: 1.17;
+
 }
 
 .site-header {
@@ -22,7 +25,7 @@
 }
 
 .nav-list {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 40px;
   margin-left: 76px;
@@ -75,7 +78,7 @@
 }
 
 .contact-list {
-  display: flex;
+  display: none;
   gap: 40px;
   margin-left: auto;
 }
@@ -89,8 +92,60 @@
   color: #404bbf;
 }
 
-@media (max-width: 760px) {
-  .nav-link {
+.menu-toggle {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (min-width: 768px) {
+  .logo {
+    padding: 24px 0;
+    margin-right: 120px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: auto;
+  }
+
+  .contact-link {
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+
+@media (min-width: 1158px) {
+  logo {
+    margin-right: 76px;
+  }
+
+  .contact-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .contact-link {
+    padding: 24px 0;
     font-size: 16px;
+    line-height: 1.5;
   }
 }

@@ -76,13 +76,14 @@ address {
 }
 
 .container {
-  width: min(100%, 1158px);
+  width: 100%;
+  max-width: 320px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 .section {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
 .section-title {
@@ -143,4 +144,24 @@ address {
 .contact-icon {
   fill: currentColor;
   margin-right: 8px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 120px 0;
+
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
