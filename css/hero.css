@@ -109,6 +109,10 @@
       image-set(url('../images/hero-bg.jpg') 1x,
         url('../images/hero-bg@2x.jpg') 2x);
   }
+
+  .hero-content {
+    gap: 48px;
+  }
 }
 
 @media (min-width: 1158px) and (min-resolution: 192dpi),

@@ -170,7 +170,7 @@
 .footer-social-title,
 .footer-subscribe-title {
   display: block;
-  text-align: center;
+  text-align: left;
 }
 
 .subscribe-form {
@@ -220,6 +220,16 @@
   .footer-inner {
     padding: 0 92px;
   }
+
+  .footer-brand,
+  .footer-social {
+    width: 50%;
+  }
+
+  .footer-subscribe {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 1158px) {
@@ -233,21 +243,23 @@
   }
 
   .footer-brand {
-    width: 264px;
+    width: 50%;
     max-width: 264px;
     margin-right: 120px;
+    width: 50%;
   }
 
   .footer-social {
-    width: 208px;
+    width: 50%;
     max-width: 208px;
     margin-right: 0;
   }
 
   .footer-subscribe {
-    width: auto;
+    width: 100%;
     max-width: 453px;
     margin-left: auto;
+    margin-top: 20px;
   }
 
 }
