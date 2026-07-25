@@ -163,14 +163,22 @@
 .footer-subscribe {
   margin: 0;
   width: 100%;
+}
+
+.footer-brand,
+.footer-social {
   max-width: 288px;
+}
+
+.footer-subscribe {
+  max-width: none;
 }
 
 .footer-logo,
 .footer-social-title,
 .footer-subscribe-title {
   display: block;
-  text-align: left;
+  text-align: center;
 }
 
 .subscribe-form {
@@ -181,7 +189,7 @@
 }
 
 .subscribe-input {
-  max-width: 288px;
+  max-width: none;
 }
 
 @media (min-width: 768px) {
@@ -211,6 +219,12 @@
     max-width: 264px;
   }
 
+  .footer-logo,
+  .footer-social-title,
+  .footer-subscribe-title {
+    text-align: left;
+  }
+
   .footer-social-list {
     justify-content: flex-start;
   }
@@ -228,7 +242,7 @@
 
   .footer-subscribe {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0;
   }
 }
 
@@ -259,7 +273,7 @@
     width: 100%;
     max-width: 453px;
     margin-left: auto;
-    margin-top: 20px;
+    margin-top: 0;
   }
 
 }
