@@ -11,7 +11,10 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./css/modern-normalize.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
@@ -58,9 +61,17 @@
           </ul>
         </address>
       </div>
-      <button class="menu-toggle" type="button" aria-label="Open menu">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+      >
         <svg width="24" height="24">
           <use href="./images/icons.svg#icon-menu"></use>
+          <symbol id="icon-menu" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z" />
+          </symbol>
         </svg>
       </button>
     </header>
@@ -742,7 +753,7 @@
         </div>
       </div>
     </footer>
-    <div class="mobile-menu">
+    <div class="mobile-menu" id="mobile-menu">
       <button class="mobile-menu-close" type="button" aria-label="Close menu">
         <svg width="8" height="8" aria-hidden="true">
           <use href="./images/icons.svg#icon-close"></use>
