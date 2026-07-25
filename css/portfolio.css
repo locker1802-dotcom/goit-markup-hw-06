@@ -103,6 +103,10 @@
 }
 
 @media (min-width: 1158px) {
+  .portfolio {
+    padding: 120px 0;
+  }
+
   .portfolio-list {
     row-gap: 48px;
   }

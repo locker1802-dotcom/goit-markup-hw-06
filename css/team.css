@@ -67,6 +67,10 @@
 }
 
 @media (min-width: 1158px) {
+  .team {
+    padding: 120px 0;
+  }
+
   .team-list {
     row-gap: 0;
   }

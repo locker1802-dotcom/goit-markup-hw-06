@@ -60,27 +60,27 @@
             </li>
           </ul>
         </address>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use href="./images/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
       </div>
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Open menu"
-        aria-controls="mobile-menu"
-      >
-        <svg width="24" height="24">
-          <use href="./images/icons.svg#icon-menu"></use>
-          <symbol id="icon-menu" viewBox="0 0 24 24">
-            <path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z" />
-          </symbol>
-        </svg>
-      </button>
     </header>
 
     <main>
       <section class="section hero" id="hero">
         <div class="container hero-inner">
-          <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="hero-button" type="button">Order Service</button>
+          <div class="hero-content">
+            <h1 class="hero-title">Effective Solutions for Your Business</h1>
+            <button class="hero-button" type="button">Order Service</button>
+          </div>
         </div>
       </section>
 
@@ -732,7 +732,7 @@
           </ul>
         </div>
         <div class="footer-subscribe">
-          <h3 class="footer-subscribe-title">Subscribe</h3>
+          <p class="footer-subscribe-title">Subscribe</p>
           <form class="subscribe-form" action="#" method="post">
             <label for="subscribe-email" class="sr-only">Email</label>
             <input
@@ -754,28 +754,113 @@
       </div>
     </footer>
     <div class="mobile-menu" id="mobile-menu">
-      <button class="mobile-menu-close" type="button" aria-label="Close menu">
-        <svg width="8" height="8" aria-hidden="true">
-          <use href="./images/icons.svg#icon-close"></use>
-        </svg>
-      </button>
+      <div class="mobile-menu-container">
+        <button class="mobile-menu-close" type="button" aria-label="Close menu">
+          <svg width="8" height="8" aria-hidden="true">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
 
-      <nav class="mobile-menu-nav">
-        <ul class="mobile-menu-list">
-          <li><a class="mobile-menu-link" href="#features">Studio</a></li>
-          <li><a class="mobile-menu-link" href="#portfolio">Portfolio</a></li>
-          <li><a class="mobile-menu-link" href="#footer">Contacts</a></li>
+        <nav class="mobile-menu-nav">
+          <ul class="mobile-menu-list">
+            <li>
+              <a class="mobile-menu-link current" href="#features">Studio</a>
+            </li>
+            <li><a class="mobile-menu-link" href="#portfolio">Portfolio</a></li>
+            <li><a class="mobile-menu-link" href="#footer">Contacts</a></li>
+          </ul>
+        </nav>
+
+        <address class="mobile-menu-contact">
+          <ul class="mobile-menu-contact-list">
+            <li>
+              <a class="mobile-menu-phone" href="tel:+110001111111"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+            <li>
+              <a class="mobile-menu-email" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+          </ul>
+        </address>
+
+        <ul class="mobile-menu-social-list">
+          <li>
+            <a
+              class="social-link"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Instagram"
+            >
+              <svg
+                class="social-icon"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social-link"
+              href="https://twitter.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Twitter"
+            >
+              <svg
+                class="social-icon"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use href="./images/icons.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social-link"
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Facebook"
+            >
+              <svg
+                class="social-icon"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social-link"
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="LinkedIn"
+            >
+              <svg
+                class="social-icon"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use href="./images/icons.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
         </ul>
-      </nav>
-
-      <address class="mobile-menu-contact">
-        <a class="mobile-menu-phone" href="tel:+110001111111"
-          >+11 (000) 111-11-11</a
-        >
-        <a class="mobile-menu-email" href="mailto:info@devstudio.com"
-          >info@devstudio.com</a
-        >
-      </address>
+      </div>
     </div>
     <div class="backdrop" id="modal" aria-hidden="true">
       <div
@@ -917,12 +1002,16 @@
         if (menuToggle && menu) {
           menuToggle.addEventListener('click', () => {
             menu.classList.add('is-open');
+            menuToggle.setAttribute('aria-expanded', 'true');
           });
         }
 
         if (closeMenuBtn && menu) {
           closeMenuBtn.addEventListener('click', () => {
             menu.classList.remove('is-open');
+            if (menuToggle) {
+              menuToggle.setAttribute('aria-expanded', 'false');
+            }
           });
         }
       })();
