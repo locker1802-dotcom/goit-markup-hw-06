@@ -1,0 +1,28 @@
+.team-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  gap: 24px;
+  flex-wrap: wrap; /* Added to allow wrapping on narrow screens */
+}
+
+.team-card {
+  flex-basis: calc((100% - 72px) / 4);
+  min-width: 264px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 980px) {
+  .team-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 760px) {
+  .team-card {
+    flex-basis: 100%;
+  }
+}

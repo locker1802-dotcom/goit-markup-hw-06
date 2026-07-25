@@ -1,0 +1,260 @@
+/* Modal backdrop wrapper */
+#modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(46, 47, 66, 0.4);
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+
+}
+
+#modal.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#modal .modal-dialog-window {
+  background-color: #fcfcfc;
+  max-width: 408px;
+  width: 90%;
+  border-radius: 4px;
+  box-shadow:
+    0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  padding: 72px 24px 24px 24px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  cursor: pointer;
+  color: #2e2f42;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-button svg {
+  fill: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  background-color: #404bbf;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.modal-title {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+}
+
+.contact-form .form-row {
+  margin-bottom: 8px;
+}
+
+.contact-form .form-row:nth-child(4) {
+  margin-bottom: 16px;
+
+}
+
+.contact-form .form-row:nth-child(5) {
+  margin-bottom: 24px;
+
+}
+
+.contact-form .form-row:last-child {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon:focus-within svg {
+  fill: #4d5ae5;
+}
+
+.input-with-icon svg {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-with-icon input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+  padding-right: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-with-icon input:focus {
+  outline: none;
+  border-color: #4d5ae5;
+}
+
+.comment-area {
+  height: 120px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  resize: none;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4d5ae5;
+}
+
+.checkbox-row input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-input:checked+label .custom-box {
+  background-color: #404bbf;
+  border-color: #404bbf;
+}
+
+.custom-box svg {
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #f4f4fd;
+}
+
+.checkbox-row input[type="checkbox"]:checked+label .custom-box {
+  background-color: #404bbf;
+  border-color: #404bbf;
+}
+
+.checkbox-row input[type="checkbox"]:checked+label .custom-box svg {
+  opacity: 1;
+}
+
+.btn {
+  min-width: 169px;
+  height: 56px;
+  background: #0077ff;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  background-color: #4d5ae5;
+  color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #404bbf;
+}
+
+/* Текст политики */
+.policy-text {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+/* Ссылка Privacy Policy */
+.policy-link {
+  color: #4d5ae5;
+  text-decoration: underline;
+}
+
+/* ensure icons in inputs are vertically centered (redundant but explicit) */
+.input-with-icon svg {
+  vertical-align: middle;
+}
+
+/* small responsive adjustments */
+@media (max-width: 720px) {
+  .modal-dialog-window {
+    position: relative;
+    width: calc(100% - 30px);
+    max-width: 408px;
+    min-height: 584px;
+    background: #fcfcfc;
+    border-radius: 4px;
+    padding: 72px 24px 24px 24px;
+    box-shadow:
+      0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 1px 3px rgba(0, 0, 0, 0.12),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+}
